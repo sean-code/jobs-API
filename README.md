@@ -63,26 +63,29 @@ This project provides a solid foundation for building a web application that man
 - Run the following command to start the server using virtual environment
 
 ```
-$ git clone https://github.com/sean-code/perfumes-NGR.git 
+$ git clone https://github.com/sean-code/jobs-API 
 ```
 
 - navigate to the project directory
 
 ```
-$ cd perfumes-NGR
+$ cd jobs-API
 ```
 - Install project
 ```
 $ npm install
 ```
-- Database Configuration (Temporarily provided my DB URL)
+- Database Configuration in your .env file
+- Set up your database and update the configuration in prisma/schema.prisma.
+- Run the Prisma migration:
 ```
-Update your database configuration in your Prisma schema (usually found in schema.prisma). Make sure your database connection URL is set correctly in the .env
+ $ npx prisma migrate dev
+```
 
+
+- Start Server from main.js
 ```
-- Seeding Database
-```
-$ node seed.js
+$ node main.js
 ```
 
 - Generate  Prisma Client
