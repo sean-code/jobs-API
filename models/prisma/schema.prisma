@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+  
+
+
+model JobCategory {
+  id          String   @id @default(uuid())
+  name        String @unique
+  description String
+
+  // Relation field
+  jobs        Job[]
+}
+
+model Job {
+  id            String   @id @default(uuid())
+  title         String
+  description   String
+  location      String
+  createdAt     DateTime   @default(now())
+
+  // Relation field
+  categoryId    Int
+  category      JobCategory @relation(fields: [categoryId], references: [id])
+  applicants    Applicant[]
+}
+
+model Applicant {
+  id         String   @id @default(uuid())
+  name       String
+  email      String   @unique
+  resumeLink String
+  createdAt  DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relation field
+  jobIds     Int[]
+  jobs       Job[]    @relation(fields: [jobIds], references: [id])
+}
