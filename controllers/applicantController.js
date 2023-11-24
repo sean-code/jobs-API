@@ -5,10 +5,11 @@ const prisma = new PrismaClient();
 // Create Applicant
 async function createApplicant(req, res) {
     try {
-      const { name, email, phoneNumber, resumeLink } = req.body;
+      const { firstName, lastName, email, phoneNumber, resumeLink } = req.body;
       const applicant = await prisma.applicant.create({
         data: {
-          name,
+          firstName,
+          lastName,
           email,
           phoneNumber,
           resumeLink
@@ -51,11 +52,12 @@ async function createApplicant(req, res) {
   async function updateApplicant(req, res) {
     try {
       const id = req.params.id;
-      const { name, email, phoneNumber, resumeLink } = req.body;
+      const { firstName, lastName, email, phoneNumber, resumeLink } = req.body;
       const applicant = await prisma.applicant.update({
         where: { id },
         data: {
-          name,
+          firstName,
+          lastName,
           email,
           phoneNumber,
           resumeLink
