@@ -1,14 +1,14 @@
-# Odour Perfumes Backend
+# Hiring Agency API Backend
 
-Developed by <a href="https://github.com/sean-code" target="_blank">Sean Nganga</a> courtesy of Grannex in 11/2023
+Developed by <a href="https://github.com/sean-code" target="_blank">Sean Nganga</a> courtesy of Grannex 11/2023
 
 ## Technologies used
 
 - Prisma (ORM)
 -  MYSQL (Database)
 - Node JS (Backend Framework)
+- Express
 - JavaScript (Language)
-- TypeScript (*)
 - PlanetScale (Database Provider)
 
 
@@ -17,19 +17,29 @@ Developed by <a href="https://github.com/sean-code" target="_blank">Sean Nganga<
 
 - <a href="" target="_blank">POSTMAN Workspace</a>
 
-This project is a Node.js application that utilizes the Prisma ORM to interact with a MySQL database. It serves as a foundation for managing and retrieving data related to users and perfumes. The project includes a script for seeding the database with sample user and perfume data, providing a starting point for development.
+This project is a Node.js application that utilizes the Prisma ORM to interact with a MySQL database. This project is part of a backend development assessment exercise for a hiring agency system. It focuses on tracking job opportunities and applicants, providing a robust and efficient backend built with [Node.js/Express/Your Framework]. The system allows for managing job openings, applicant details, and job applications.
 
-Key Features:
+### Key Features:
 
-Database Seeding: The included database seeding script populates the MySQL database with sample user and perfume data, enabling you to quickly get started with your project.
+#### Required
 
-User Management: The application includes routes for finding all users and individual users by their UUID IDs.
+* Job Openings Management: API endpoints to add and manage job openings, storing details in a database.
+* Applicant Tracking: Capabilities to register applicants, including personal details, job applications, and resume links.
+* Applicant and Job Details Retrieval: Endpoints to fetch and display lists of applicants and the jobs they have applied for.
 
-Perfume Management: It offers various routes for managing and retrieving perfume data, including CRUD actions (Create, Read, Update, Delete) and filtering perfumes by category, color, price range, and rating.
 
-Express.js Web Server: The application is built using Express.js, providing a web server for handling API requests.
+#### Optional
 
-Prisma ORM: Prisma is used as the ORM to interact with the MySQL database, making it easy to work with your data models.
+* 
+
+#### General Overview
+* Applicants Management: ...
+
+* Jobs Management: ...
+
+* Express.js Web Server: The application is built using Express.js, providing a web server for handling API requests.
+
+* Prisma ORM: Prisma is used as the ORM to interact with the MySQL database, making it easy to work with your data models.
 
 This project provides a solid foundation for building a web application that manages user and perfume data. You can easily extend and customize it to suit your specific requirements.
 
