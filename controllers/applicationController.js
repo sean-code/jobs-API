@@ -1,4 +1,6 @@
 // Application CRUD Operations
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
 // Create Application
 async function createApplication(req, res) {

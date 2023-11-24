@@ -8,14 +8,17 @@ const applicantRoutes = require('./routes/applicantRoutes');
 
 const app = express();
 app.use(express.json());
-app.use((req, res, next) => {
-    res.status(404).send("Sorry, can't find that!");
-});
+
 
 app.use('/api', jobRoutes);
 app.use('/api', jobCategoryRoutes);
 app.use('/api', applicationRoutes);
 app.use('/api', applicantRoutes);
+
+app.use((req, res, next) => {
+    res.status(404).send("Sorry, can't find that!");
+  });
+  
 
 
 const PORT = process.env.PORT || 3000;

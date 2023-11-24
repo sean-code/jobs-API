@@ -34,7 +34,7 @@ const prisma = new PrismaClient();
     //Get Job By ID
     async function getJobById(req, res) {
         try {
-          const id = parseInt(req.params.id);
+          const id = req.params.id;
           const job = await prisma.job.findUnique({
             where: { id }
           });
@@ -51,7 +51,7 @@ const prisma = new PrismaClient();
       //Update Job
       async function updateJob(req, res) {
         try {
-          const id = parseInt(req.params.id);
+          const id = req.params.id;
           const { title, description, location, jobCategoryId } = req.body;
           const job = await prisma.job.update({
             where: { id },
@@ -72,7 +72,7 @@ const prisma = new PrismaClient();
       //Delete Job
       async function deleteJob(req, res) {
         try {
-          const id = parseInt(req.params.id);
+          const id = req.params.id;
           await prisma.job.delete({
             where: { id }
           });
