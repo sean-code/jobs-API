@@ -79,7 +79,7 @@ $ npm install
 - Set up your database and update the configuration in prisma/schema.prisma.
 - Run the Prisma migration:
 ```
- $ npx prisma migrate dev
+ $ npx prisma migrate
 ```
 
 
@@ -88,26 +88,10 @@ $ npm install
 $ node main.js
 ```
 
-- Generate  Prisma Client
+- Optionally you can Read from Prisma Studio
 
-```
-$ npx prisma generate
-```
-
-- Migrate DB Schema and Push changes
-
-```
-$ npx prisma migrate 
-$ npx prisma db push
-
-```
-
-- Run server.js and/or prisma studio
 ```
 $ prisma studio
-```
-```
-$ node server.js
 ```
 
 
@@ -118,18 +102,19 @@ $ node server.js
 - interact with CRUD actions on this <a href="https://www.postman.com/vlapp-emmerce/workspace/odour-perfumes/collection/26841432-2a54e5f4-4a02-4f5d-a3c8-15945bf80a14?action=share&creator=26841432" target="_blank">POSTMAN workspace</a>
 
 
-## Endpoints
-- GET All  Perfumes
+
+## Available Endpoints
+- GET All  Jobs
 ```
-/perfumes
+/
 
 ```
 - GET by ID
 
 ```
-/perfumes/:ID
+/ /:ID
 ```
-- GET by color
+- GET 
 
 ```
 /perfumes/color/:COLOR
