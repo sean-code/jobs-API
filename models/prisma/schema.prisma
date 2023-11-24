@@ -9,11 +9,12 @@ datasource db {
 }
   
 
-
 model JobCategory {
   id          String   @id @default(uuid())
   name        String @unique
   description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   // Relation field
   jobs        Job[]
@@ -25,22 +26,49 @@ model Job {
   description   String
   location      String
   createdAt     DateTime   @default(now())
+  updatedAt     DateTime @updatedAt
 
   // Relation field
-  categoryId    Int
-  category      JobCategory @relation(fields: [categoryId], references: [id])
-  applicants    Applicant[]
+  jobCategoryId String
+  jobCategory   JobCategory @relation(fields: [jobCategoryId], references: [id], onDelete: Cascade)
+
+  @@index([jobCategoryId])
+
+
+  applications  Application[]
 }
+
+
 
 model Applicant {
   id         String   @id @default(uuid())
   name       String
   email      String   @unique
+  phoneNumber Int 
   resumeLink String
   createdAt  DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  updatedAt  DateTime @updatedAt
 
   // Relation field
-  jobIds     Int[]
-  jobs       Job[]    @relation(fields: [jobIds], references: [id])
+  applications Application[]
+}
+
+
+
+model Application {
+  id          String   @id @default(uuid())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  jobId       String
+  job         Job @relation(fields: [jobId], references: [id])
+
+  @@index([jobId])
+
+
+  applicantId String
+  applicant   Applicant @relation(fields: [applicantId], references: [id])
+
+  @@index([applicantId])
+
 }
