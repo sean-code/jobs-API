@@ -48,6 +48,8 @@ async function createApplicant(req, res) {
     }
   }
   
+
+  
   // Update Applicant
   async function updateApplicant(req, res) {
     try {
