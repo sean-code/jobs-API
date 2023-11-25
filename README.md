@@ -1,15 +1,19 @@
 # Hiring Agency API Backend
 
+
 Developed by <a href="https://github.com/sean-code" target="_blank">Sean Nganga</a> courtesy of Grannex 11/2023
+
+- <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a>
 
 ## Technologies used
 
 - Prisma (ORM)
--  MYSQL (Database)
+- MYSQL (Database)
 - Node JS (Backend Framework)
 - Express
 - JavaScript (Language)
 - PlanetScale (Database Provider)
+- Render (Backend Dceployment Web Service)
 
 
 
@@ -17,15 +21,21 @@ Developed by <a href="https://github.com/sean-code" target="_blank">Sean Nganga<
 
 - <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a>
 
-This project is a Node.js application that utilizes the Prisma ORM to interact with a MySQL database. This project is part of a backend development assessment exercise for a hiring agency system. It focuses on tracking job opportunities and applicants, providing a robust and efficient backend built with [Node.js/Express/Your Framework]. The system allows for managing job openings, applicant details, and job applications.
+This project is a Node.js application that utilizes the Prisma ORM to interact with a MySQL database. This project is part of a backend development assessment exercise for a hiring agency system. It focuses on tracking job opportunities and applicants, providing a robust and efficient backend built with Node.js, Express, and Prisma. The system allows for managing job openings, applicant details, and job applications.
 
-### Key Features:
+This was achieved through 4 models (JobCategories, Jobs, Applicants, and Applications), and also the 5th User model for the purpose of Authentication.
+
+- <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a>
+
+### Key Features Done:
+
 
 #### Required
 
-* Job Openings Management: API endpoints to add and manage job openings, storing details in a database.
-* Applicant Tracking: Capabilities to register applicants, including personal details, job applications, and resume links.
-* Applicant and Job Details Retrieval: Endpoints to fetch and display lists of applicants and the jobs they have applied for.
+* Job Openings Management: API endpoints to add, list, update and update job openings, and storing details in MYSQL database.
+* Applicant Tracking: Capabilities to register, list, update, and delete applicants including personal details, job applications, and resume links, and save to MYSQL database.
+
+* Applicant and Job Details Retrieval: Full CRUD actions Endpoints to fetch and display lists of applicants and the jobs they have applied for.
 
 
 #### Optional functionality
@@ -46,129 +56,91 @@ This project is a Node.js application that utilizes the Prisma ORM to interact w
 This project provides a solid foundation for building a web application that manages user and perfume data. You can easily extend and customize it to suit your specific requirements.
 
 
-## Setup Requirements
- Make sure these are installed in your system
 
-- Git
-- Web-browser of your choice
-- Github
-- MYSQL
-- Prisma
-- Node 16^
-- JS
+## Consuming API Endpoints with Postman
 
-## Setup Installation
+### Setting Up / Signup
+1. Open this <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a> on your device
+2. Open the Auth Folder and click on POST Register New User. Fill in the request body with your chosen email and password in JSON format:
+    ```
+    {
+      "email": "yours@example.com",
+      "password": "your-password"
+    }
+    ```
+3. Send the request by clicking the "Send" button
 
-- Copy the github repository url
-- Clone to your computer
-- Open terminal and navigate to the directory of the project you just cloned to your computer
-- Run the following command to start the server using virtual environment
+### Login and Retrieve Token
 
-```
-$ git clone https://github.com/sean-code/jobs-API 
-```
+1. Click on "POST Login User" under the "Auth" collection
+2. Enter the same email and password you registered with in the request body.
+3. Send the request. You will receive a JSON response with a Bearer token. Copy this token.
 
-- navigate to the project directory
-
-```
-$ cd jobs-API
-```
-- Install project
-```
-$ npm install
-```
-- Database Configuration in your .env file
-- Set up your database and update the configuration in prisma/schema.prisma.
-- Run the Prisma migration:
-```
- $ npx prisma migrate
-```
+### Set the Bearer Token
+1. Click on the "Auth" collection in the sidebar Select the "Authorization" tab in the right-hand pane.
+2. Set the type to "Bearer Token".
+3. Paste the copied token into the "Token" field. Click "Save".
 
 
-- Start Server from main.js
-```
-$ node main.js
-```
+Your token is now set for all requests within the "Auth" collection. Since the token expires after 30 minutes, you may need to log in again to refresh the token if it expires.
 
-- Optionally you can Read from Prisma Studio
-
-```
-$ prisma studio
-```
-
-
-
-- open the browser on port 5555(prisma studio) / port 3000(json view)...
-
-
-- interact with CRUD actions on this <a href="https://www.postman.com/vlapp-emmerce/workspace/odour-perfumes/collection/26841432-2a54e5f4-4a02-4f5d-a3c8-15945bf80a14?action=share&creator=26841432" target="_blank">POSTMAN workspace</a>
+You can now Consume all Other Endpoints in the Postman Workspace
 
 
 
 ## Available Endpoints
-- GET All  Jobs
-```
-/
 
-```
-- GET by ID
+From baseUrl prefix https://graffix-jobsapi.onrender.com/api , the following are the endpoints: 
 
-```
-/ /:ID
-```
-- GET 
 
+-  User Authentication Routes
 ```
-/perfumes/color/:COLOR
+POST /api/register - Register a new user.
+POST /api/login - Login for existing users.
 ```
 
-- GET by Category
+- Job Routes
 ```
-/perfumes/category/:CATEGORY
-```
-
--  GET by PRICE
-```
-/perfumes/price/:PRICE
-```
-
-- GET by Rating
-```
-/perfumes/rating/:RATING
+POST /api/jobs - Create a new job.
+GET /api/jobs - Retrieve all jobs.
+GET /api/jobs/:id - Retrieve a specific job by its ID.
+PUT /api/jobs/:id - Update a specific job by its ID.
+DELETE /api/jobs/:id - Delete a specific job by its ID.
 ```
 
-- POST 
-```
-/perfume
-
-{
-    "name":"",
-    "category": "",
-    "price":"",
-    "rating": "",
-    "userId": ""
-}
-```
-- DELETE perfume
-```
-/perfumes/:ID
-```
- - CART items
+- JobCategory Routes
 
 ```
-/cart
+POST /api/jobCategories - Create a new job category.
+GET /api/jobCategories - Retrieve all job categories.
+GET /api/jobCategories/:id - Retrieve a specific job category by its ID.
+PUT /api/jobCategories/:id - Update a specific job category by its ID.
+DELETE /api/jobCategories/:id - Delete a specific job category by its ID.
 ```
-- Cart ITEMS by ID
+
+
+
+- Applicant Routes
+```
+POST /api/applicants - Create a new applicant.
+GET /api/applicants - Retrieve all applicants.
+GET /api/applicants/:id - Retrieve a specific applicant by its ID.
+PUT /api/applicants/:id - Update a specific applicant by its ID.
+DELETE /api/applicants/:id - Delete a specific applicant by its ID.
+```
+
+- Application Routes
 
 ```
-/cart/:userID
+POST /api/applications - Create a new application.
+GET /api/applications - Retrieve all applications.
+GET /api/applications/:id - Retrieve a specific application by its ID.
+PUT /api/applications/:id - Update a specific application by its ID.
+DELETE /api/applications/:id - Delete a specific application by its ID.
+GET /api/applications/job/:jobId - Retrieve applications by a specific Job ID.
+GET /api/applications/applicant/:applicantId - Retrieve applications by a specific Applicant ID.
 ```
 
-- DELETE cart items
-
-```
-/cart/:cartItemId
-```
 
 
 
@@ -176,34 +148,34 @@ $ prisma studio
 
 - MYSQL DB Tables
     <br>
-  <img src="./assets/images/DBPAge.png" alt="screenshot" />
+  <img src="./assets/imgs/DBTables.png" alt="screenshot" />
 
 
-- All Perfumes
+- Prisma Studio View
   <br>
-  <img src="./assets/images/Perfumes.png" alt="screenshot" />
+  <img src="./assets/imgs/PrismaStudioData.png" alt="screenshot" />
 
 
-- By ID
+- Folder Architecture
+  <br>
+  <img src="./assets/imgs/FolderArchitecture.png" alt="screenshot" />
+
+
+- Job Categories
     <br>
-  <img src="./assets/images/PerfumeByID.png" alt="screenshot" />
+  <img src="./assets/imgs/JobCategories.png" alt="screenshot" />
 
-- By Category
+- Jobs
     <br>
-  <img src="./assets/images/By Category.png" alt="screenshot" />
+  <img src="./assets/imgs/Jobs.png" alt="screenshot" />
 
 
-- By Color
+- Access Without Auth
     <br>
-  <img src="./assets/images/ByColor.png" alt="screenshot" />
-
-- PRISMA STUDIO VIEW -perfumes
-    <br>
-  <img src="./assets/images/Prisma Studio View.png" alt="screenshot" />
+  <img src="./assets/imgs/AccessWithoutAuth.png" alt="screenshot" />
 
 
-
-* And So much more to explore
+* And So much more to explore...
 
 
 ## Known Bugs
