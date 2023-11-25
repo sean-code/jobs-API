@@ -1,11 +1,11 @@
-# Hiring Agency API Backend
+# Hiring Agency API Backend 🦺
 
 
 Developed by <a href="https://github.com/sean-code" target="_blank">Sean Nganga</a> courtesy of Grannex 11/2023
 
 - <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a>
 
-## Technologies used
+## Technologies used 🧑‍💻
 
 - Prisma (ORM)
 - MYSQL (Database)
@@ -13,11 +13,11 @@ Developed by <a href="https://github.com/sean-code" target="_blank">Sean Nganga<
 - Express
 - JavaScript (Language)
 - PlanetScale (Database Provider)
-- Render (Backend Dceployment Web Service)
+- Render (Backend Deployment Web Service)
 
 
 
-## Description
+## Description 📝
 
 - <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a>
 
@@ -27,7 +27,7 @@ This was achieved through 4 models (JobCategories, Jobs, Applicants, and Applica
 
 - <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a>
 
-### Key Features Done:
+### Key Features Done: ✅
 
 
 #### Required
@@ -40,9 +40,18 @@ This was achieved through 4 models (JobCategories, Jobs, Applicants, and Applica
 
 #### Optional functionality
 
-* Authentication - signup and login 
-* JWT - Bearer Token
-* Password Encryption - Bcrypt encryption
+-- Following are implemented to enhance security
+
+  * UUID as Primary Key - UUID consists of 32 hex digits separated by four dashes, which makes it quite challenging to remember. At some level this relieves the vulnerability of data manipulation.
+
+  * Authentication - signup and login helps protect all routes used in this API. You have to be registered in the system through sign up, so then you can access login, and eventually through login you can have access to all other endpoints.  
+
+  * JWTs - JSON Web Tokens implementation makes the API secure because they contain a signature that can be verified to ensure validity. 
+
+
+  * Password Encryption using Bcrypt - Bcrypt encryption of passoword is essential because it the password is saved in the db in a salted format. 
+
+
 
 #### General Overview
 * Applicants Management: ...
@@ -57,7 +66,7 @@ This project provides a solid foundation for building a web application that man
 
 
 
-## Consuming API Endpoints with Postman
+## Consuming API Endpoints with Postman 🧐
 
 ### Setting Up / Signup
 1. Open this <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a> on your device
@@ -88,7 +97,7 @@ You can now Consume all Other Endpoints in the Postman Workspace
 
 
 
-## Available Endpoints
+## Available Endpoints 🏷️
 
 From baseUrl prefix https://graffix-jobsapi.onrender.com/api , the following are the endpoints: 
 
@@ -144,7 +153,7 @@ GET /api/applications/applicant/:applicantId - Retrieve applications by a specif
 
 
 
-## Some Screenshots
+## Some Screenshots 📸
 
 - MYSQL DB Tables
     <br>
@@ -178,7 +187,7 @@ GET /api/applications/applicant/:applicantId - Retrieve applications by a specif
 * And So much more to explore...
 
 
-## Known Bugs
+## Known Bugs 🐛
 
 So far so good there are no bugs related to this project 😎
 
