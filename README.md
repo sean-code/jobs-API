@@ -3,7 +3,7 @@
 
 Developed by <a href="https://github.com/sean-code" target="_blank">Sean Nganga</a> courtesy of Grannex 11/2023
 
-- <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a>
+- Link to <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a>
 
 ## Technologies used 🧑‍💻
 
