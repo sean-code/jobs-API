@@ -197,7 +197,7 @@ To make a contribution to the code used or any suggestions you can click on the 
 
 - Telegram: https://t.me/sean_code
 
-## MIT License
+## MIT License 🛂
 
 Copyright (c) 2023 Sean
 
