@@ -44,6 +44,39 @@ async function createApplication(req, res) {
       res.status(400).json({ error: error.message });
     }
   }
+
+
+
+  // Get Applications by Job ID
+  async function getApplicationsByJobId(req, res) {
+    try {
+      const jobId = req.params.jobId;
+      const applications = await prisma.application.findMany({
+        where: { jobId }
+      });
+      res.status(200).json(applications);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  }
+
+
+
+  // Get Applications by Applicant ID
+    async function getApplicationsByApplicantId(req, res) {
+      try {
+        const applicantId = req.params.applicantId;
+        const applications = await prisma.application.findMany({
+          where: { applicantId }
+        });
+        res.status(200).json(applications);
+      } catch (error) {
+        res.status(400).json({ error: error.message });
+      }
+    }
+
+
+
   
   // Update Application
   async function updateApplication(req, res) {
@@ -80,6 +113,8 @@ async function createApplication(req, res) {
     createApplication,
     getAllApplications,
     getApplication,
+    getApplicationsByJobId,
+    getApplicationsByApplicantId,
     updateApplication,
     deleteApplication
   };
