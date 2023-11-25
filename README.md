@@ -15,7 +15,7 @@ Developed by <a href="https://github.com/sean-code" target="_blank">Sean Nganga<
 
 ## Description
 
-- <a href="" target="_blank">POSTMAN Workspace</a>
+- <a href="https://www.postman.com/vlapp-emmerce/workspace/graffix-workspace/collection/26841432-c5a587c9-e394-4442-a479-64102c0791b1?action=share&creator=26841432&active-environment=26841432-d174213c-8355-4d3a-9cc9-5ea6d8f19baf" target="_blank">POSTMAN Workspace</a>
 
 This project is a Node.js application that utilizes the Prisma ORM to interact with a MySQL database. This project is part of a backend development assessment exercise for a hiring agency system. It focuses on tracking job opportunities and applicants, providing a robust and efficient backend built with [Node.js/Express/Your Framework]. The system allows for managing job openings, applicant details, and job applications.
 
