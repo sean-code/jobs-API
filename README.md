@@ -28,9 +28,11 @@ This project is a Node.js application that utilizes the Prisma ORM to interact w
 * Applicant and Job Details Retrieval: Endpoints to fetch and display lists of applicants and the jobs they have applied for.
 
 
-#### Optional
+#### Optional functionality
 
-* 
+* Authentication - signup and login 
+* JWT - Bearer Token
+* Password Encryption - Bcrypt encryption
 
 #### General Overview
 * Applicants Management: ...
