@@ -3,7 +3,6 @@ const router = express.Router();
 const applicantController = require('../controllers/applicantController');
 const authenticateToken = require('../middleware/authenticateToken');
 
-
 // Routes for Applicants
 router.post('/applicants', authenticateToken, applicantController.createApplicant);
 router.get('/applicants', authenticateToken, applicantController.getAllApplicants);

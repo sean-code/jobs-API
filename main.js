@@ -4,8 +4,9 @@ const jobCategoryRoutes = require('./routes/jobCategoryRoutes')
 const applicationRoutes = require('./routes/applicationRoutes');
 const applicantRoutes = require('./routes/applicantRoutes');
 const userRoutes = require('./routes/userRoutes');
-
 // other route imports...
+
+
 
 const app = express();
 app.use(express.json());
